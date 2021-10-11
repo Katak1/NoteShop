@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Приложения 
+    'products',
+    
 ]
 
 MIDDLEWARE = [
@@ -77,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'noteshop',
-        'USER': 'alihser',
+        'USER': 'alisher',
         'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': 5432,
