@@ -40,6 +40,15 @@ INSTALLED_APPS = [
     #Приложения 
     'products',
     
+    # Accounts
+    'account',
+
+    ## Libraries
+    # Token Authentication
+    'rest_framework',
+    'rest_framework.authtoken',
+
+
 ]
 
 MIDDLEWARE = [
@@ -80,7 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'noteshop',
-        'USER': 'alisher',
+        # 'USER': 'alisher',
+        'USER': 'baiel',
         'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': 5432,
@@ -131,3 +141,25 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication'],
+
+}
+
+
+AUTH_USER_MODEL = 'account.User'
+
+# Email configs
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+# свой email
+EMAIL_HOST_USER = 'noteshop.bishkek@gmail.com'
+EMAIL_HOST_PASSWORD = '456545654'
