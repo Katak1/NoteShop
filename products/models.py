@@ -18,7 +18,12 @@ class Product(CreateatModel):
     STATUS = Choices('Available', 'Not existed')
     title = models.CharField(max_length=50, unique=True )
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    description = models.TextField()
+    specification = models.TextField()
     image = models.ImageField(upload_to='products_image', null=True, blank=True)
     status = StatusField
 
+class ProductReview(CreateatModel):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
+    text = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
+    rating = models.PositiveBigIntegerField(default=1)
