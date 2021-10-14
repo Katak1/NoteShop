@@ -26,7 +26,7 @@ class ProductViewSet(LikedMixin,viewsets.ModelViewSet):
 
 class ProductReviewViewSet(viewsets.ModelViewSet):
     queryset = ProductReview.objects.all()
-    serializer_class = ProductReviewSerializer
+    serializer_class = ProductReviewSerializer  
     permission_classes = [IsAuthenticatedOrReadOnly, ]
 
 
@@ -41,3 +41,4 @@ class ProductReviewViewSet(viewsets.ModelViewSet):
 
         kwargs['context'] = self.get_serializer_context()
         return self.serializer_class(*args, **kwargs)
+

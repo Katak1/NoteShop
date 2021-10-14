@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'products',
     'likes.apps.LikesConfig',
     'Order',
-    'Cart',
+    'cart',
     # Accounts
     'account',
 

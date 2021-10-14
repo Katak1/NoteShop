@@ -5,6 +5,7 @@ from model_utils.fields import StatusField
 from django.contrib.contenttypes.fields import GenericRelation
 from likes.models import Like
 
+
 User = get_user_model()
 
 
@@ -35,3 +36,4 @@ class ProductReview(CreatedatModel):
     text = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews', null=True)
     rating = models.PositiveBigIntegerField(default=1)
+
