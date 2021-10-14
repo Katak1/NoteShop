@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, get_user_model
 from .models import User
 from .utils import send_activation_code
 from django.core.mail import send_mail
+from django.contrib.auth.hashers import make_password
 
 User = get_user_model()
 
