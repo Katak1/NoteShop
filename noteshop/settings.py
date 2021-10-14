@@ -28,9 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Приложения 
     'products',
-    #Lib
-    'rest_framework'
-    
+    'likes.apps.LikesConfig',
+    'Order',
+    'Cart',
     # Accounts
     'account',
 
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     # Token Authentication
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
+
 
 
 ]
@@ -80,14 +82,21 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'noteshop',
-        # 'USER': 'alisher',
-        'USER': 'baiel',
+        'USER': 'alisher',
+        # 'USER': 'baiel',
         'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': 5432,
         
     }
 }
+
+
+AUTHENTICATION_BACKENDS = (
+
+    'django.contrib.auth.backends.ModelBackend',
+
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -138,9 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication'],
-
 }
-
 
 AUTH_USER_MODEL = 'account.User'
 
