@@ -14,6 +14,7 @@ class RegistrationSerializer(serializers.Serializer):
     password_confirm = serializers.CharField(
         min_length=4, required=True
     )
+
     name = serializers.CharField(required=True)
     last_name = serializers.CharField()
 
@@ -22,10 +23,12 @@ class RegistrationSerializer(serializers.Serializer):
             raise serializers.ValidationError(
                 "Пользователь с таким email уже зарегистрирован"
             )
+
         return email
 
     def validate(self, data):
         password = data.get('password')
+
         password_confirm = data.pop('password_confirm')
         if password != password_confirm:
             raise serializers.ValidationError(

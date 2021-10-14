@@ -6,7 +6,6 @@ from django_filters import rest_framework as filters
 from rest_framework import filters as rest_filters
 from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
-
 class ProductViewSet(LikedMixin,viewsets.ModelViewSet):
 
     queryset = Product.objects.all()
@@ -19,6 +18,7 @@ class ProductViewSet(LikedMixin,viewsets.ModelViewSet):
     ]
     filter_fields = ['price', 'title']
     search_fields = ['title', 'id', 'specification']
+
     def get_permissions(self):
         if self.action in ['create', 'update', 'partial_update', 'destroy']:
             return [IsAdminUser()]
@@ -28,7 +28,6 @@ class ProductReviewViewSet(viewsets.ModelViewSet):
     queryset = ProductReview.objects.all()
     serializer_class = ProductReviewSerializer  
     permission_classes = [IsAuthenticatedOrReadOnly, ]
-
 
 
     def get_serializer_context(self):
