@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'likes.apps.LikesConfig',
     'Order',
+    'cart',
     'drf-yasg',
+  
     # Accounts
     'account',
 
