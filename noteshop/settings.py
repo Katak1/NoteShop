@@ -28,15 +28,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Приложения 
     'products',
-<<<<<<< HEAD
+
     #Lib
     'rest_framework',
-    
-=======
     'likes.apps.LikesConfig',
     'Order',
-    'Cart',
->>>>>>> 1c371c50db12770b59587c94084d8cf3c7baaae8
+
     # Accounts
     'account',
 
@@ -87,12 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'noteshop',
-<<<<<<< HEAD
         'USER': 'admin',
-=======
-        'USER': 'alisher',
-        # 'USER': 'baiel',
->>>>>>> 1c371c50db12770b59587c94084d8cf3c7baaae8
         'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': '',
