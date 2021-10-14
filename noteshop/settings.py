@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-d76@!p902rrjwg8i0_@ma_@5na7wlt^4nt=mnopzz4jn4p)z7w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.107.48.118']
 
 
 # Application definition
@@ -29,14 +29,13 @@ INSTALLED_APPS = [
     #Приложения 
     'products',
     #Lib
-    'rest_framework'
+    'rest_framework',
     
     # Accounts
     'account',
 
     ## Libraries
     # Token Authentication
-    'rest_framework',
     'rest_framework.authtoken',
 
 
@@ -78,14 +77,12 @@ WSGI_APPLICATION = 'noteshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'noteshop',
-        # 'USER': 'alisher',
-        'USER': 'baiel',
+        'USER': 'admin',
         'PASSWORD': '1',
         'HOST': 'localhost',
-        'PORT': 5432,
-        
+        'PORT': '',
     }
 }
 
@@ -126,7 +123,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR, 'noteshop/static')
+]
 
 MEDIA_URL = '/media/'
 
