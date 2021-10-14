@@ -1,10 +1,5 @@
 from django.shortcuts import render
 from rest_framework.permissions import IsAuthenticated
-<<<<<<< HEAD
-=======
-
-# Create your views here.
->>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
 from .serializers import RegistrationSerializer, ActivationSerializer, LoginSerializer, ChangePasswordSerializer, ForgotPasswordSerializer, ForgotPassCompleteSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response

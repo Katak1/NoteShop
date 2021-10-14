@@ -3,10 +3,7 @@ from django.contrib.auth import authenticate, get_user_model
 from .models import User
 from .utils import send_activation_code
 from django.core.mail import send_mail
-<<<<<<< HEAD
 from django.contrib.auth.hashers import make_password
-=======
->>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
 
 User = get_user_model()
 
@@ -14,30 +11,24 @@ User = get_user_model()
 class RegistrationSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True)
     password = serializers.CharField(min_length=4, required=True)
-<<<<<<< HEAD
     password_confirm = serializers.CharField(
         min_length=4, required=True
     )
-=======
-    password_confirmation = serializers.CharField(min_length=4, required=True)
->>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
+
     name = serializers.CharField(required=True)
     last_name = serializers.CharField()
 
     def validate_email(self, email):
         if User.objects.filter(email=email).exists():
-<<<<<<< HEAD
             raise serializers.ValidationError(
                 "Пользователь с таким email уже зарегистрирован"
             )
-=======
-            raise serializers.ValidationError('Пользователь с таким email уже зарегистрирован')
->>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
+
         return email
 
     def validate(self, data):
         password = data.get('password')
-<<<<<<< HEAD
+
         password_confirm = data.pop('password_confirm')
         if password != password_confirm:
             raise serializers.ValidationError(
@@ -52,17 +43,6 @@ class RegistrationSerializer(serializers.Serializer):
         send_activation_code(
             user.email, user.activation_code
         )
-=======
-        password_confirmation = data.pop('password_confirmation')
-        if password_confirmation != password:
-            raise serializers.ValidationError('Пароли не совпадают')
-        return data
-
-    def create(self, validated_data):
-        user = User.objects.create(**validated_data)
-        user.create_activation_code()
-        send_activation_code(user.email, user.activation_code)
->>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
         return user
 
 

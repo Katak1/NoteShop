@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from .models import Product, ProductReview
 from rest_framework import serializers
 from likes import services as likes_services
@@ -55,19 +54,4 @@ class ProductReviewSerializer(serializers.ModelSerializer):
         author = request.user
         print(author)
         return ProductReview.objects.create(author=author, **validated_data)
-=======
-from .models import Product
-from rest_framework import serializers
 
-
-class ProductSerializer(serializers.ModelSerializer):
-
-
-    class Meta:
-        model = Product
-        fields = '__all__'
-
-class ProductReviewSerializer(serializers.ModelSerializer):
-
-    product_title = serializers.SerializerMethodField("get_product_title")
->>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
