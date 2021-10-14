@@ -5,3 +5,4 @@ Pillow
 django-utils-six
 django-model-utils==4.1.1
 django-filter
+drf-yasg

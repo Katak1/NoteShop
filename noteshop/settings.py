@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -15,7 +14,7 @@ SECRET_KEY = 'django-insecure-d76@!p902rrjwg8i0_@ma_@5na7wlt^4nt=mnopzz4jn4p)z7w
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['34.107.48.118']
+ALLOWED_HOSTS = ['34.141.62.32']
 
 # Application definition
 
@@ -34,7 +33,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'likes.apps.LikesConfig',
     'Order',
-    'drf-yasg',
+    'drf_yasg',
     # Accounts
     'account',
 
@@ -69,7 +68,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-        },
+	},
     },
 ]
 
@@ -93,7 +92,7 @@ DATABASES = {
 
 AUTHENTICATION_BACKENDS = (
 
-    'django.contrib.auth.backemds.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -135,7 +134,7 @@ STATIC_URL = '/static/'
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, 'noteshop/static')
+	os.path.join(BASE_DIR, 'static')
 ]
 
 

@@ -17,9 +17,9 @@ URL для лайков указанны в .likes/urls.py
 """
 
 urlpatterns = [
-    path('adminss/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
-    path('api/v1/', include('account.urls')),
+    path('api/v1/account/', include('account.urls')),
 
 ]
 
