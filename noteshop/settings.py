@@ -14,7 +14,11 @@ SECRET_KEY = 'django-insecure-d76@!p902rrjwg8i0_@ma_@5na7wlt^4nt=mnopzz4jn4p)z7w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['34.107.48.118']
+=======
+ALLOWED_HOSTS = []
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
 
 
 # Application definition
@@ -28,20 +32,31 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Приложения 
     'products',
+<<<<<<< HEAD
 
     #Lib
     'rest_framework',
     'likes.apps.LikesConfig',
     'Order',
 
+=======
+    #Lib
+    'rest_framework'
+    
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
     # Accounts
     'account',
 
     ## Libraries
     # Token Authentication
+<<<<<<< HEAD
     'rest_framework.authtoken',
     'django_filters',
 
+=======
+    'rest_framework',
+    'rest_framework.authtoken',
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
 
 
 ]
@@ -82,6 +97,7 @@ WSGI_APPLICATION = 'noteshop.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'noteshop',
         'USER': 'admin',
@@ -98,6 +114,19 @@ AUTHENTICATION_BACKENDS = (
 
 )
 
+=======
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'noteshop',
+        # 'USER': 'alisher',
+        'USER': 'baiel',
+        'PASSWORD': '1',
+        'HOST': 'localhost',
+        'PORT': 5432,
+        
+    }
+}
+
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -135,11 +164,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'noteshop/static')
 ]
+=======
+
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
 
 MEDIA_URL = '/media/'
 
@@ -151,8 +184,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication'],
+<<<<<<< HEAD
 }
 
+=======
+
+}
+
+
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
 AUTH_USER_MODEL = 'account.User'
 
 # Email configs
@@ -166,4 +206,8 @@ EMAIL_USE_TLS = True
 
 # свой email
 EMAIL_HOST_USER = 'noteshop.bishkek@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = '456545654'
+=======
+EMAIL_HOST_PASSWORD = '456545654'
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a

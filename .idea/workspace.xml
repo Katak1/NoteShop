@@ -83,6 +83,39 @@
             <State />
           </value>
         </entry>
+<<<<<<< HEAD
+=======
+        <entry key="c79e6c6a-4417-4b05-a0a3-2f404710c786">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="c79e6c6a-4417-4b05-a0a3-2f404710c786" value="TOOL_WINDOW" />
+>>>>>>> e6c35691a81bc41017155fd9eaac78025b720a2a
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
