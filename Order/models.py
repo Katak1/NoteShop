@@ -1,5 +1,5 @@
 from django.db import models
-from products.models import CreatedatModel
+from products.models import CreateatModel
 from model_utils import Choices
 from model_utils.fields import StatusField
 from django.contrib.auth import get_user_model
@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class Order(CreatedatModel):
+class Order(CreateatModel):
     STATUS = Choices(
         "In progress",
         "Canceled",

@@ -9,7 +9,9 @@ from likes.models import Like
 User = get_user_model()
 
 
-class CreatedatModel(models.Model):
+
+class CreateatModel(models.Model):
+
     created = models.DateTimeField(auto_now_add=True, null=True)
 
 
@@ -17,7 +19,9 @@ class CreatedatModel(models.Model):
         abstract = True
 
 
-class Product(CreatedatModel):
+
+class Product(CreateatModel):
+
     STATUS = Choices('Available', 'Not existed')
     title = models.CharField(max_length=50, unique=True )
     price = models.DecimalField(max_digits=10, decimal_places=2)
@@ -30,10 +34,8 @@ class Product(CreatedatModel):
     def total_likes(self):
         return self.likes.count()
 
-
-class ProductReview(CreatedatModel):
+class ProductReview(CreateatModel):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
     text = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews', null=True)
     rating = models.PositiveBigIntegerField(default=1)
-

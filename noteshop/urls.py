@@ -5,7 +5,7 @@ from products.views import ProductViewSet, ProductReviewViewSet
 from django.conf import settings
 from django.conf.urls.static import static 
 from Order.views import OrderViewSet
-
+from .yasg import urlpatterns as doc_urls
 
 
 
@@ -19,13 +19,16 @@ router.register('order', OrderViewSet)
 """
 URL для лайков указанны в .likes/urls.py
 """
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
-    path('api/v1/', include('account.urls')),
     path('api/v1/', include('cart.urls')),
+    path('api/v1/account/', include('account.urls')),
 
+]
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += doc_urls
 
-    
+if settings.DEBUG:
+	static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
