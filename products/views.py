@@ -5,6 +5,9 @@ from .serializers import ProductSerializer, ProductReviewSerializer
 from django_filters import rest_framework as filters
 from rest_framework import filters as rest_filters
 from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
+from rest_framework.decorators import action
+from rest_framework import serializers
+from rest_framework.response import Response
 
 class ProductViewSet(LikedMixin,viewsets.ModelViewSet):
 
@@ -26,7 +29,7 @@ class ProductViewSet(LikedMixin,viewsets.ModelViewSet):
 
 class ProductReviewViewSet(viewsets.ModelViewSet):
     queryset = ProductReview.objects.all()
-    serializer_class = ProductReviewSerializer
+    serializer_class = ProductReviewSerializer  
     permission_classes = [IsAuthenticatedOrReadOnly, ]
 
 

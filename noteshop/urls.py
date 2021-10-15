@@ -8,10 +8,14 @@ from Order.views import OrderViewSet
 from .yasg import urlpatterns as doc_urls
 
 
+
+
 router = DefaultRouter()
 router.register('products', ProductViewSet)
 router.register('reviews', ProductReviewViewSet)
 router.register('order', OrderViewSet)
+# router.register('cart', CartViewSet)
+
 """
 URL для лайков указанны в .likes/urls.py
 """
@@ -19,6 +23,7 @@ URL для лайков указанны в .likes/urls.py
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
+    path('api/v1/', include('cart.urls')),
     path('api/v1/account/', include('account.urls')),
 
 ]
