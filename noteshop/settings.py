@@ -34,9 +34,15 @@ INSTALLED_APPS = [
     #Lib
     'rest_framework',
     'likes.apps.LikesConfig',
-    'drf_yasg',
-    
-    
+
+    'Order',
+    'cart',
+    'drf-yasg',
+  
+    # Accounts
+    'account',
+
+
     ## Libraries
     # Token Authentication
 
