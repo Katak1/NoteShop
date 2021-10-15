@@ -43,4 +43,4 @@ class CartItemViews(APIView):
     def delete(self, request, id=None):
         item = get_object_or_404(CartItem, id=id)
         item.delete()
-        return Response({"status": "success", "data": "Item Deleted"})
+        return Response({"status": "success", "data": "Item Deleted"}) 
