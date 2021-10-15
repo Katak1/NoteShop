@@ -14,9 +14,9 @@ class Order(CreateatModel):
         "Finished",
     )
     total_sum = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    user = models.ForeignKey(User, on_delete=models.RESTRICT, related_name="orders")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="orders")
     products = models.ManyToManyField('products.Product', through = 'OrderItem')
-    order_status = StatusField
+    order_status = StatusField()
 
     class Meta:
         ordering = ['-created']
@@ -27,7 +27,7 @@ class Order(CreateatModel):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(
-        Order, on_delete = models.RESTRICT, related_name = 'items'
+        Order, on_delete = models.CASCADE, related_name = 'items'
     )
     product = models.ForeignKey(
         'products.Product', on_delete = models.RESTRICT, related_name = 'order_items'

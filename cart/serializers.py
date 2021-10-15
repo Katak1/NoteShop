@@ -7,6 +7,7 @@ class CartItemSerializer(serializers.ModelSerializer):
     product_price = serializers.FloatField()
     product_quantity = serializers.IntegerField(required=False, default=1)
 
+
     class Meta:
         model = CartItem
         fields = ('__all__')
