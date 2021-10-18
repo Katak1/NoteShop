@@ -25,7 +25,7 @@ urlpatterns = [
     path('api/v1/', include(router.urls)),
     path('api/v1/', include('cart.urls')),
     path('api/v1/account/', include('account.urls')),
-
+    path('chat/', include('chat.urls')),
 ]
 
 urlpatterns += doc_urls

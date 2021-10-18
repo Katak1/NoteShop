@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-d76@!p902rrjwg8i0_@ma_@5na7wlt^4nt=mnopzz4jn4p)z7w
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['34.141.62.32']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     'Order',
     'cart',
     'account',
+    'chat',
+    'channels',
 
     #Lib
     'rest_framework',
@@ -73,8 +75,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'noteshop.wsgi.application'
-
-
+ASGI_APPLICATION = 'noteshop.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -82,10 +91,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'noteshop',
-        'USER': 'admin',
+        'USER': 'baiel',
         'PASSWORD': '1',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
@@ -133,9 +142,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, 'static')
-]
+
 
 
 MEDIA_URL = '/media/'
