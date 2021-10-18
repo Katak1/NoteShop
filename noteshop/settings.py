@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-d76@!p902rrjwg8i0_@ma_@5na7wlt^4nt=mnopzz4jn4p)z7w
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['34.141.62.32']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'Order',
     'cart',
     'account',
-
+    'chat',
     #Lib
     'rest_framework',
     'likes.apps.LikesConfig',
@@ -82,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'noteshop',
-        'USER': 'admin',
+        'USER': 'baiel',
         'PASSWORD': '1',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
@@ -133,9 +133,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-	os.path.join(BASE_DIR, 'static')
-]
 
 
 MEDIA_URL = '/media/'
