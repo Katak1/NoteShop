@@ -19,8 +19,6 @@ class UserManager(BaseUserManager):
         return user
 
     def create_user(self, email, password, **extra_fields):
-        # is_staff = False
-        # is_active = True
         extra_fields.setdefault('is_staff', False)
 
         return self._create(email, password, **extra_fields)
