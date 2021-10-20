@@ -6,7 +6,7 @@ from django.conf import settings
 from django.conf.urls.static import static 
 from Order.views import OrderViewSet
 from .yasg import urlpatterns as doc_urls
-
+from .settings import *
 
 
 
@@ -29,6 +29,8 @@ urlpatterns = [
 ]
 
 urlpatterns += doc_urls
-
+urlpatterns += static(
+    settings.MEDIA_URL, document_root = settings.MEDIA_ROOT
+)
 if settings.DEBUG:
 	static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

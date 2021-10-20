@@ -4,6 +4,8 @@ from .models import User
 from .utils import send_activation_code
 from django.core.mail import send_mail
 from django.contrib.auth.hashers import make_password
+from .tasks import send_activation_code_celery
+
 
 User = get_user_model()
 
@@ -40,9 +42,10 @@ class RegistrationSerializer(serializers.Serializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         user.create_activation_code()
-        send_activation_code(
-            user.email, user.activation_code
-        )
+        # send_activation_code(
+        #     user.email, user.activation_code
+        # )
+        send_activation_code_celery.delay(user.email, user.activation_code)
         return user
 
 
